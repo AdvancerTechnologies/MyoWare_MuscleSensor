@@ -2,20 +2,17 @@
 // and sends it out via serial
 
 // variables for input pins and
-int analogInput[6];
+int analogInput[6] = {A0, A1, A2, A3, A4, A5};
   
 // variable to store the value 
-int value[6]; 
+int value[6] = {0, 0, 0, 0, 0, 0};  
  
 void setup()
 {
   // declaration of pin modes
   for(int i=0;i<6;i++)
-  {
-    analogInput[i] = i+1;
-    value[i] = 0;     
     pinMode(analogInput[i], INPUT);    
-  }
+
   
   // begin sending over serial port
   Serial.begin(9600);
